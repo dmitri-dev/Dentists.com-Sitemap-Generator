@@ -7,10 +7,7 @@ class SiteMap:
         self.home_url = "https://www.dentists.com"
         self.file = open("sitemap.txt", "w")
         self.soup = lambda url: BeautifulSoup(requests.get(self.home_url + url).text, "html.parser")
-
-    def soup(self, url):
-        return BeautifulSoup(requests.get(self.home_url + url).text, "html.parser")
-
+        
     def write_get(self, url=""):
         self.soup(url)
         self.file.write(self.home_url + url + "\n")
